@@ -1,0 +1,28 @@
+ID: mta_UI5-typescript
+_schema-version: '2.1'
+parameters:
+  deploy_mode: html5-repo
+version: 0.0.1
+modules:
+  - name: UI5-typescript
+    type: html5
+    path: UI5-typescript
+    build-parameters:
+      builder: custom
+      commands:
+        - npm install
+        - npm run build
+      supported-platforms: []
+      build-result: dist
+resources:
+  - name: uaa_mta_UI5-typescript
+    parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+    type: org.cloudfoundry.managed-service
+  - name: dest_mta_UI5-typescript
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service

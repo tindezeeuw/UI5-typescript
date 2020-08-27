@@ -1,0 +1,11 @@
+specVersion: '1.0'
+metadata:
+  name: UI5-typescript
+type: application
+server:
+  settings:
+    httpPort: 5050
+resources:
+  configuration:
+    paths:
+      webapp: ./webapp

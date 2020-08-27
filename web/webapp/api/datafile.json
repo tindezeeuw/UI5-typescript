@@ -1,0 +1,14 @@
+{
+    "data": "Zit in de file",
+    "list": [
+        {
+            "title": "Eerste item"
+        },
+        {
+            "title": "Tweede item"
+        },
+        {
+            "title": "Derde item"
+        }
+    ]
+}
