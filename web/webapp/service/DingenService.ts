@@ -1,22 +1,24 @@
-class DingenService {
-    private httpClient: HttpClient;
+namespace ui5TypescriptDemo {
+    export class DingenService {
+        private httpClient: ui5TypescriptDemo.HttpClient;
 
-    constructor(HttpClient) {
-        this.httpClient = HttpClient;
-    }
+        constructor(HttpClient) {
+            this.httpClient = HttpClient;
+        }
 
-    async getDingen() {
-        const data = await this.httpClient.get("../api/datafile.json");
-        var oModel = new sap.ui.model.json.JSONModel(data, true);
-        oModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
-        return oModel;
+        async getDingen() {
+            const data = await this.httpClient.get("../api/datafile.json");
+            var oModel = new sap.ui.model.json.JSONModel(data, true);
+            oModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
+            return oModel;
+        }
     }
 }
 
 sap.ui.define([
     "./HttpClient"
 ], function (HttpClient) {
-	"use strict";
+    "use strict";
 
-	return new DingenService(HttpClient);
+    return new ui5TypescriptDemo.DingenService(HttpClient);
 });
