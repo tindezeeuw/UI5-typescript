@@ -1,16 +1,24 @@
 namespace ui5TypescriptDemo {
     export class DingenService {
-        private httpClient: ui5TypescriptDemo.HttpClient;
+        private restService: ui5TypescriptDemo.HttpClient;
+
+        private readonly apiPrefix = "../api";
+        private readonly dataURL = `${this.apiPrefix}/datafile.json`;
 
         constructor(HttpClient) {
-            this.httpClient = HttpClient;
+            this.restService = HttpClient;
         }
 
         async getDingen() {
-            const data = await this.httpClient.get("../api/datafile.json");
-            var oModel = new sap.ui.model.json.JSONModel(data, true);
-            oModel.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
-            return oModel;
+            const data = await this.restService.get(this.dataURL);
+            const model = this.createModel(data);
+            return model;
+        }
+
+        private createModel(data: any) {
+            const model = new sap.ui.model.json.JSONModel(data, true);
+            model.setDefaultBindingMode(sap.ui.model.BindingMode.OneWay);
+            return model;
         }
     }
 }
