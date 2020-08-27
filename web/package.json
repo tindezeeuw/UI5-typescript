@@ -3,9 +3,12 @@
     "version": "0.0.1",
     "description": "",
     "devDependencies": {
-        "@ui5/cli": "^2.4.1"
+        "@openui5/ts-types": "^1.60.5",
+        "@ui5/cli": "^2.4.1",
+        "typescript": "^4.0.2"
     },
     "scripts": {
-        "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo"
+        "build": "ui5 build --clean-dest --include-task=generateManifestBundle generateCachebusterInfo",
+        "ts": "tsc --build --watch"
     }
 }
