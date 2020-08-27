@@ -2,3 +2,8 @@ node_modules
 package-lock.json
 
 dist/
+
+# niet-TS files
+webapp/**/*.js.map
+webapp/**/*.js
+!webapp/test/**/*.js
