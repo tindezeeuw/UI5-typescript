@@ -25,7 +25,7 @@ Deze repository geeft een voorbeeld van het ombouwen van een Javascript UI5 appl
 
 * Het is handig ook je .gitignore aan te passen met de volgende regels:
 
-      \# niet-TS files niet in git stoppen
+      # niet-TS files niet in git stoppen
       webapp/**/*.js.map
       webapp/**/*.js
       !webapp/test/**/*.js
