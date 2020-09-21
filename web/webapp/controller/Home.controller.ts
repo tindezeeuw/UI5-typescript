@@ -1,19 +1,19 @@
 namespace ui5TypescriptDemo {
     sap.ui.define([
-        "sap/ui/core/mvc/Controller",
+        'ui5typescriptdemo/controller/BaseController',
         "ui5typescriptdemo/service/DingenService"
     ], function (
-        Controller, 
+        BaseController: typeof ui5TypescriptDemo.BaseController,
         DingenService: ui5TypescriptDemo.DingenService
         ) {
         "use strict";
 
         const className = "ui5typescriptdemo.controller.Home";
         
-        class HomeController extends Controller {
+        class HomeController extends BaseController {
             constructor() {
                 super(className);
-                const fnClass = Controller.extend(className, {});
+                const fnClass = BaseController.extend(className, {});
                 this.getMetadata = fnClass.prototype.getMetadata;
             }
 
